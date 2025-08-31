@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { io } from 'socket.io-client';
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL_BackendURL
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL
 console.log("DEBUG",API_BASE_URL)
 
 export const useWebRTC = (roomId, role, onRemoteStream) => {

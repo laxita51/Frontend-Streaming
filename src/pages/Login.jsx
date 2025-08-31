@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL_BackendURL
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL
 console.log("DEBUG",API_BASE_URL)
 
 export default function Login() {
