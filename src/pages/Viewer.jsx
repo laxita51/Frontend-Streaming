@@ -80,7 +80,7 @@ export default function Viewer() {
               autoPlay
               playsInline
               controls
-              muted={false} // Ensure not muted for viewer
+              muted={false} 
               onLoadedData={() => {
                 console.log('✅ Video loaded successfully');
                 setConnectionStatus('connected');
@@ -110,7 +110,7 @@ export default function Viewer() {
             <ul>
               <li>Publisher has started the stream</li>
               <li>You're using the correct Room ID</li>
-              <li>Both devices are on the same network</li>
+              <li>Both devices are on the same network - Not neccessary It will still work</li>
             </ul>
           </div>
         )

@@ -376,19 +376,20 @@ export const useWebRTC = (roomId, role, onRemoteStream) => {
         enabled: t.enabled,
         muted: t.muted
       })));
-
+      
+      //webRTC peer connection
       const peerConnection = new RTCPeerConnection({
         iceServers: iceServersRef.current
       });
       peerConnectionsRef.current[viewerId] = peerConnection;
 
-      // Add local stream to connection with detailed logging
+      //detailed logging
       tracks.forEach(track => {
         console.log('🎥 Publisher: Adding track:', track.kind);
         peerConnection.addTrack(track, localStreamRef.current);
       });
 
-      // Enhanced ICE candidate handling with logging
+      // ICE candidate handling with logging
       peerConnection.onicecandidate = (event) => {
         console.log('🧊 Publisher: ICE candidate event:', event.candidate ? 'has candidate' : 'end of candidates');
 
